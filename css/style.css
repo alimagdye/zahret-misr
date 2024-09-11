@@ -108,6 +108,10 @@ header nav a:hover {
   transition: all 0.8s ease;
 }
 
+.hero a{
+  position: relative;
+  z-index: 3;
+}
 /* Dropdown Styles */
 .dropdown {
   position: relative; /* Needed for dropdown positioning */
@@ -1106,10 +1110,8 @@ ol {
   }
   main .quote{
     font-size: 1.4rem;
-    /* padding: 1rem; */
     line-height: 1.8rem;
- padding: 4rem 0;
-    /* text-align: left; */
+ padding: 4rem 0.3rem;
   }
   main .about-end p{
     text-align:left;
@@ -1161,7 +1163,7 @@ main .contactForm {
 main .container summary, .modal .container summary{
   font-size: 1.2rem;
 }
-main .container p, .modal .container p{
+main .container p, .modal .container p, .modal .container li{
   font-size: 1.1rem;
 }
 #faq h2{
