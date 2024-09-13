@@ -625,6 +625,14 @@ const error = document.querySelector("#error");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  document.querySelector("#hiddenDate").value = new Intl.DateTimeFormat(
+    "en-US",
+    {
+      hour12: true,
+      dateStyle: "full",
+      timeStyle: "long",
+    }
+  ).format(new Date());
   const formData = new FormData(form);
   const object = Object.fromEntries(formData);
   const json = JSON.stringify(object);
