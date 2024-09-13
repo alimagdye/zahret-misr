@@ -1234,20 +1234,15 @@ main #successModal p{
   font-size: 2.2rem;
   font-weight: 600;
   text-align: center;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 1rem;
 }
 
 main #successModal small{
   color: #444;
   font-weight: 500;
   font-size: 1.5rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);  
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .success .icon{
