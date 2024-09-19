@@ -385,6 +385,11 @@ const navContent = document.querySelector(".hidden .nav-content");
 const navClose = document.querySelector(".hidden .nav-close");
 const anchorsInCells = document.querySelectorAll(".nav-content .cell a");
 const items = document.querySelectorAll(".accordion button");
+const quickLinksContainer = document.querySelector("footer .quick-links");
+const computerNav = document.querySelector("header .computer-nav");
+const logo = document.querySelector("header .logo a");
+const heroBtn = document.querySelector("header .hero a");
+const FAQContactBtn = document.querySelector('main .faq-contact a')
 const yearElement = document.getElementById("year");
 const currentYear = new Date().getFullYear();
 const cards = document.querySelectorAll(".card");
@@ -393,24 +398,23 @@ let isModalOpen = false; // Flag to track if modal is open
 // for displaying current year in footer
 yearElement.textContent = currentYear;
 
-// functions
-function scrollAnchors(event) {
-  event.preventDefault(); // Prevent the default anchor behavior
-  try{
-  const target = document.querySelector(
-    event.currentTarget.getAttribute("href")
-  ); // Find the target section
-  target.scrollIntoView({ behavior: "smooth" });
-  }
-  catch(error){
-    console.log(error, 'the wanted section is not found');
-  }
-}
+const scroll = function (e, useTarget = true) {
+  e.preventDefault(); // Prevent default behavior
 
-// Attach the event listener to all anchor tags with href starting with #
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", scrollAnchors);
-});
+  try {
+    const element = useTarget ? e.target : e.currentTarget; // Use target or currentTarget based on option
+    if (element.hasAttribute("href")) {
+      const targetSection = document.querySelector(
+        element.getAttribute("href")
+      ); // Get the target section
+      targetSection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
+      return true;
+    }
+  } catch (error) {
+    console.log(error.message, " - the wanted section is not found"); // Log a better error message
+    return false;
+  }
+};
 
 // for expanding and collapsing sections using accordion
 function toggleAccordion() {
@@ -514,16 +518,13 @@ const displayCardDetails = function (card) {
   // Close modal on "Contact Us" click, then scroll to contact section
   document
     .querySelector(".modal .contact-btn .contact")
-    .addEventListener("click", function (event) {
-      event.preventDefault(); // Prevent the default behavior
+    .addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent the default behavior
       // Call handleClose first to close the modal
       handleClose();
 
       // Smooth scroll to the contact section after modal is closed
-      const contactSection = document.querySelector("#contact");
-      window.scroll({
-        top: contactSection.offsetTop,
-        left: 0,
+      document.querySelector("#contact").scrollIntoView({
         behavior: "smooth",
       });
     });
@@ -570,9 +571,27 @@ phoneNav.addEventListener("click", function () {
 
 navClose.addEventListener("click", navCloseFunction);
 
-anchorsInCells.forEach((anchor) => {
-  anchor.addEventListener("click", navCloseFunction);
+navContent.addEventListener("click", (e) => {
+  if (scroll(e)) navCloseFunction();
 });
+
+quickLinksContainer.addEventListener("click", (e) => {
+  scroll(e);
+});
+computerNav.addEventListener("click", (e) => {
+  scroll(e);
+});
+logo.addEventListener("click", (e) => {
+  scroll(e, false);
+});
+
+heroBtn.addEventListener("click", (e) => {
+  scroll(e, false);
+})
+
+FAQContactBtn.addEventListener("click", (e) => {
+  scroll(e, false);
+})
 
 items.forEach((item) => item.addEventListener("click", toggleAccordion));
 
@@ -586,6 +605,7 @@ document.addEventListener("keydown", (event) => {
 
 // delegation for cards
 cards.forEach(
+  // for both fruit and veg containers
   (
     cardCategory // cards is the grandparent div
   ) =>
