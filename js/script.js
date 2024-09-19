@@ -1,4 +1,7 @@
 "use strict";
+
+// data
+/////////////////////////////////////////////////////////////////
 const products = [
   [
     {
@@ -332,6 +335,8 @@ const products = [
   ],
 ];
 
+/////////////////////////////////////////////////////////////////
+
 // on load
 const productsContainers = document.querySelectorAll(".products .cards");
 // when loading the page
@@ -341,56 +346,30 @@ const onLoad = function () {
     products[j].forEach((product) => {
       productsContainers[i].insertAdjacentHTML(
         "beforeend",
-        `<li>
-                <div class="card ${product.productName.replace(" ", "-")}">
+        `
+                <div class="card" data-product-name="${
+                  product.productName
+                }" data-product-category="${j === 1 ? "fruit" : "vegetable"}">
                   <img
                     loading="lazy"
                     src="images/${product.image}"
-                    class="card__image ${product.productName.replace(
-                      " ",
-                      "-"
-                    )} ${j === 1 ? "fruit" : "vegetable"}"
+                    class="card__image"
                     alt="${product.productName}"
                   />
-                  <div class="card__overlay ${product.productName.replace(
-                    " ",
-                    "-"
-                  )}">
-                    <div class="card__header ${product.productName.replace(
-                      " ",
-                      "-"
-                    )} ${j === 1 ? "fruit" : "vegetable"}">
-                      <svg class="card__arc ${product.productName.replace(
-                        " ",
-                        "-"
-                      )}" xmlns="http://www.w3.org/2000/svg">
-                        <path class="to-be-second ${product.productName.replace(
-                          " ",
-                          "-"
-                        )}"/>
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                        <path class="to-be-second"/>
                       </svg>
 
-                      <div class="card__header-text ${product.productName.replace(
-                        " ",
-                        "-"
-                      )} ${j === 1 ? "fruit" : "vegetable"}">
-                        <h3 class="card__title ${product.productName.replace(
-                          " ",
-                          "-"
-                        )} ${j === 1 ? "fruit" : "vegetable"}">${
-          product.productName
-        }</h3>
-                        <span class="card__status ${product.productName.replace(
-                          " ",
-                          "-"
-                        )} ${
-          j === 1 ? "fruit" : "vegetable"
-        }">Product Details &rarr;</span>
+                      <div class="card__header-text">
+                        <h3 class="card__title">${product.productName}</h3>
+                        <span class="card__status">Product Details &rarr;</span>
                       </div>
                     </div>
                   </div>
                 </div>
-              </li>`
+              `
       );
     });
     j--;
@@ -409,10 +388,7 @@ const items = document.querySelectorAll(".accordion button");
 const yearElement = document.getElementById("year");
 const currentYear = new Date().getFullYear();
 const cards = document.querySelectorAll(".card");
-// const modal = document.querySelector(".modal");
-// const overlay = document.querySelector(".overlay");
 let isModalOpen = false; // Flag to track if modal is open
-// const contact = document.querySelector(".modal .contact");
 
 // for displaying current year in footer
 yearElement.textContent = currentYear;
@@ -420,18 +396,14 @@ yearElement.textContent = currentYear;
 // functions
 function scrollAnchors(event) {
   event.preventDefault(); // Prevent the default anchor behavior
-  const targetID = event.currentTarget.getAttribute("href"); // Get the href attribute
-  const target = document.querySelector(targetID); // Find the target section
-
-  if (target) {
-    // Check if target element exists
-    window.scroll({
-      top: target.offsetTop, // Scroll to the top offset of the target
-      left: 0,
-      behavior: "smooth", // Smooth scrolling
-    });
-  } else {
-    console.log(`Target element for ${targetID} not found.`);
+  try{
+  const target = document.querySelector(
+    event.currentTarget.getAttribute("href")
+  ); // Find the target section
+  target.scrollIntoView({ behavior: "smooth" });
+  }
+  catch(error){
+    console.log(error, 'the wanted section is not found');
   }
 }
 
@@ -462,21 +434,17 @@ const navCloseFunction = function () {
   }, 500);
 };
 
-const displayCardDetails = function (e) {
+const displayCardDetails = function (card) {
   // here we get the card clicked using the target
   let cardClicked;
   try {
     cardClicked =
-      e.target.className.split(" ")[2] === "fruit"
+      card.dataset.productCategory === "fruit"
         ? products[1].find(
-            (product) =>
-              product.productName ===
-              e.target.className.split(" ")[1].replace("-", " ")
+            (product) => product.productName === card.dataset.productName
           )
         : products[0].find(
-            (product) =>
-              product.productName ===
-              e.target.className.split(" ")[1].replace("-", " ")
+            (product) => product.productName === card.dataset.productName
           );
   } catch (error) {
     return;
@@ -608,8 +576,6 @@ anchorsInCells.forEach((anchor) => {
 
 items.forEach((item) => item.addEventListener("click", toggleAccordion));
 
-cards.forEach((card) => card.addEventListener("click", displayCardDetails));
-
 document.addEventListener("keydown", (event) => {
   if (
     event.key === "Escape" &&
@@ -618,6 +584,21 @@ document.addEventListener("keydown", (event) => {
     handleClose();
 });
 
+// delegation for cards
+cards.forEach(
+  (
+    cardCategory // cards is the grandparent div
+  ) =>
+    cardCategory.addEventListener("click", function (e) {
+      const cardDiv = e.target.closest(".card");
+      if (cardDiv && cardCategory.contains(cardDiv)) {
+        displayCardDetails(cardDiv); // Call the function with the parent div as the target
+      }
+    })
+);
+
+// form
+/////////////////////////////////////////////////////////////////
 const form = document.getElementById("form");
 const modalMessage = document.querySelector(".modal-message");
 const modalMessage2 = document.querySelector(".modal-message2");
