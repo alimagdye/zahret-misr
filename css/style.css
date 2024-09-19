@@ -484,7 +484,6 @@ main .products .card__arc {
   bottom: 100%;
   right: 0;
   z-index: 1;
-  cursor: initial;
 }
 
 main .products .card__arc path {
