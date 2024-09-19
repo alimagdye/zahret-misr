@@ -47,15 +47,16 @@ header .logo img {
   position: fixed;
   left: 2rem;
   top: 1.5rem;
-  z-index: 2;
+  z-index: 4;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
 }
 
-header .logo a {
+header .logo {
   position: fixed;
-  left: 3rem;
-  top: 1.8rem;
+  left: 2rem;
+  top: 1.5rem;
+  z-index: 4;
 }
 
 header nav {
@@ -108,7 +109,7 @@ header nav a:hover {
   transition: all 0.8s ease;
 }
 
-.hero a{
+.hero a {
   position: relative;
   z-index: 2;
 }
@@ -161,15 +162,15 @@ header nav a:hover {
     z-index: 4;
   }
 
-  .hidden .logo img {
-    left: 1rem;
+  header .logo,
+  header .logo img {
     top: 1rem;
   }
 
   .hidden .phone-nav {
     position: fixed;
-    top: 1rem;
     right: 1rem;
+    top: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     height: 2.9rem;
@@ -1048,7 +1049,7 @@ ol {
   text-align: center;
 }
 
-.products #fresh-vegetables{
+.products #fresh-vegetables {
   margin-top: 15rem;
 }
 
@@ -1060,41 +1061,40 @@ ol {
   main .products {
     padding: 0.5rem;
   }
-  main .products p{
+  main .products p {
     padding: 0;
   }
   .hero h1 {
     font-size: 2rem;
   }
-  main .quote{
+  main .quote {
     font-size: 1.6rem;
   }
   main details p {
     padding: 0;
   }
-  main #img-bg{
+  main #img-bg {
     display: none;
   }
-  main .about-start p{
+  main .about-start p {
     padding: 10rem 0 2rem 0;
     margin: 0;
   }
-  main .about-start{
+  main .about-start {
     height: 8rem;
     padding: 1rem;
   }
-  main .explore{
+  main .explore {
     position: relative;
-
   }
-  main .about-end{
+  main .about-end {
     margin-top: 0;
     padding-top: 0;
   }
-  main .contact-form .heading{
+  main .contact-form .heading {
     font-size: 2.8rem;
   }
-  main .products #fresh-vegetables{
+  main .products #fresh-vegetables {
     margin-top: 8rem;
   }
 }
@@ -1107,80 +1107,83 @@ ol {
   .hero h1 {
     font-size: 1.8rem;
   }
-  main .quote{
+  main .quote {
     font-size: 1.4rem;
     line-height: 1.8rem;
- padding: 4rem 0.3rem;
+    padding: 4rem 0.3rem;
   }
-  main .about-end p{
-    text-align:left;
+  main .about-end p {
+    text-align: left;
     font-size: 1.3rem;
     line-height: 1.4rem;
   }
-  .footer-container{
+  .footer-container {
     flex-direction: column;
   }
-  main .about-start p{
+  main .about-start p {
     line-height: 1.7rem;
     font-size: 1.5rem;
   }
- 
-  main .contact-form .heading{
+
+  main .contact-form .heading {
     font-size: 2rem;
   }
-  main .products p{
+  main .products p {
     font-size: 1.5rem;
   }
-main .contactForm .para{
-  font-size: 1.1rem;
-}
-main .contactForm {
-  margin-top: 1rem;
-}
+  main .contactForm .para {
+    font-size: 1.1rem;
+  }
+  main .contactForm {
+    margin-top: 1rem;
+  }
 
-  .faq-contact{
+  .faq-contact {
     text-align: left;
     padding: 0.2rem;
   }
 
-  .contactMethod .method .para{
+  .contactMethod .method .para {
     font-size: 1.1rem;
   }
 
-  .faq-contact a button{
+  .faq-contact a button {
     font-size: 1.1rem;
     padding: 0.5rem 1.1rem;
   }
 
-  main .contact-form p{
+  main .contact-form p {
     font-size: 1.5rem;
   }
 
-  .modal p{
+  .modal p {
     font-size: 1.3rem;
   }
-main .container summary, .modal .container summary{
-  font-size: 1.2rem;
-}
-main .container p, .modal .container p, .modal .container li{
-  font-size: 1.1rem;
-}
-#faq h2{
-  font-size: 2rem;
-}
-#home button{
-  font-size: 1.1rem;
-  padding: 0.5rem 1.1rem;
-}
+  main .container summary,
+  .modal .container summary {
+    font-size: 1.2rem;
+  }
+  main .container p,
+  .modal .container p,
+  .modal .container li {
+    font-size: 1.1rem;
+  }
+  #faq h2 {
+    font-size: 2rem;
+  }
+  #home button {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.1rem;
+  }
 
-.products .cards{
-  margin: 4rem 0;
-}
+  .products .cards {
+    margin: 4rem 0;
+  }
 
   main .products {
     padding: 0;
   }
-  main .products h1 + p{
+  main .products h1 + p {
     margin-bottom: 0.5rem;
   }
 
@@ -1189,9 +1192,7 @@ main .container p, .modal .container p, .modal .container li{
   }
 }
 
-
-
-.contact-modal{
+.contact-modal {
   display: none;
   position: fixed;
   top: 50%;
@@ -1210,8 +1211,7 @@ main .container p, .modal .container p, .modal .container li{
   overflow-y: auto;
 }
 
-
-.success .icon{
+.success .icon {
   border: solid 0.6rem;
   border-radius: 50%;
   height: 100px;
@@ -1221,14 +1221,13 @@ main .container p, .modal .container p, .modal .container li{
   display: none;
 }
 
-.success .icon:nth-child(2){
-  border-color: #FB0102;
+.success .icon:nth-child(2) {
+  border-color: #fb0102;
   display: none;
 }
 
-
 /* success */
-main #successModal p{
+main #successModal p {
   color: #444;
   font-size: 2.2rem;
   font-weight: 600;
@@ -1236,7 +1235,7 @@ main #successModal p{
   margin-top: 1rem;
 }
 
-main #successModal small{
+main #successModal small {
   color: #444;
   font-weight: 500;
   font-size: 1.5rem;
@@ -1244,20 +1243,20 @@ main #successModal small{
   margin-top: 2rem;
 }
 
-.success .icon{
-  border-color: #008B05;
+.success .icon {
+  border-color: #008b05;
 }
 
 .true::before,
 .true::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 2.2rem;
   left: 0.5rem;
   border-radius: 0.5rem;
   width: 4rem;
   height: 0.6rem;
-  background-color: #008B05;
+  background-color: #008b05;
 }
 
 .true::before {
@@ -1276,14 +1275,14 @@ main #successModal small{
 
 .cross-icon::before,
 .cross-icon::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0.6rem;
   left: 2.2rem;
   border-radius: 0.5rem;
   width: 0.6rem;
   height: 4rem;
-  background-color: #FB0102;
+  background-color: #fb0102;
 }
 
 .cross-icon::before {
@@ -1293,4 +1292,3 @@ main #successModal small{
 .cross-icon::after {
   transform: rotate(-45deg);
 }
-
