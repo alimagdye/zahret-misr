@@ -328,7 +328,7 @@ main details,
   padding: 1rem 2rem;
   font-size: 1.8rem;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 1.5rem;
   background-color: #ffffff;
   transition: box-shadow 0.3s ease;
 }
@@ -750,6 +750,7 @@ main .method {
   z-index: 2; /* Keeps footer bottom text above background */
   display: flex;
   justify-content: space-evenly;
+  gap: 1rem;
 }
 
 .footer-bottom p {
@@ -1008,7 +1009,7 @@ main .faq-contact button {
 .modal img {
   width: 100%;
   height: auto;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   margin: 1rem 0;
 }
 
