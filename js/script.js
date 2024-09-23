@@ -389,7 +389,7 @@ const quickLinksContainer = document.querySelector("footer .quick-links");
 const computerNav = document.querySelector("header .computer-nav");
 const logo = document.querySelector("header .logo a");
 const heroBtn = document.querySelector("header .hero a");
-const FAQContactBtn = document.querySelector('main .faq-contact a')
+const FAQContactBtn = document.querySelector("main .faq-contact a");
 const yearElement = document.getElementById("year");
 const currentYear = new Date().getFullYear();
 const cards = document.querySelectorAll(".card");
@@ -398,8 +398,18 @@ let isModalOpen = false; // Flag to track if modal is open
 // for displaying current year in footer
 yearElement.textContent = currentYear;
 
-const scroll = function (e, useTarget = true) {
+const navCloseFunction = function () {
+  navContent.style.animation = "fromLeft .5s forwards";
+  setTimeout(() => {
+    navContent.style.display = "none";
+    phoneNav.style.display = "block";
+    navContent.style.animation = "";
+  }, 500);
+};
+
+const scroll = function (e) {
   e.preventDefault(); // Prevent default behavior
+  const useTarget = this === 2 ? true : this;
 
   try {
     const element = useTarget ? e.target : e.currentTarget; // Use target or currentTarget based on option
@@ -408,11 +418,10 @@ const scroll = function (e, useTarget = true) {
         element.getAttribute("href")
       ); // Get the target section
       targetSection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
-      return true;
+      if (this === 2) navCloseFunction();
     }
   } catch (error) {
     console.log(error.message, " - the wanted section is not found"); // Log a better error message
-    return false;
   }
 };
 
@@ -428,15 +437,6 @@ function toggleAccordion() {
     this.setAttribute("aria-expanded", "true");
   }
 }
-
-const navCloseFunction = function () {
-  navContent.style.animation = "fromLeft .5s forwards";
-  setTimeout(() => {
-    navContent.style.display = "none";
-    phoneNav.style.display = "block";
-    navContent.style.animation = "";
-  }, 500);
-};
 
 const displayCardDetails = function (card) {
   // here we get the card clicked using the target
@@ -571,27 +571,16 @@ phoneNav.addEventListener("click", function () {
 
 navClose.addEventListener("click", navCloseFunction);
 
-navContent.addEventListener("click", (e) => {
-  if (scroll(e)) navCloseFunction();
-});
+navContent.addEventListener("click", scroll.bind(2));
 
-quickLinksContainer.addEventListener("click", (e) => {
-  scroll(e);
-});
-computerNav.addEventListener("click", (e) => {
-  scroll(e);
-});
-logo.addEventListener("click", (e) => {
-  scroll(e, false);
-});
+quickLinksContainer.addEventListener("click", scroll.bind(true));
 
-heroBtn.addEventListener("click", (e) => {
-  scroll(e, false);
-})
+computerNav.addEventListener("click", scroll.bind(true));
+logo.addEventListener("click", scroll.bind(false));
 
-FAQContactBtn.addEventListener("click", (e) => {
-  scroll(e, false);
-})
+heroBtn.addEventListener("click", scroll.bind(false));
+
+FAQContactBtn.addEventListener("click", scroll.bind(false));
 
 items.forEach((item) => item.addEventListener("click", toggleAccordion));
 
@@ -603,9 +592,9 @@ document.addEventListener("keydown", (event) => {
     handleClose();
 });
 
-// delegation for cards
+// delegation for both cards categories
 cards.forEach(
-  // for both fruit and veg containers
+  // for both fruit and vegetables containers
   (
     cardCategory // cards is the grandparent div
   ) =>
