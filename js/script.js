@@ -7,6 +7,7 @@ const products = [
     {
       productName: "Spring Onion",
       image: "spring-onion.png",
+      lazyImage: "spring-onion-lazy.png",
       description:
         "Rich in antioxidants that help protect the body from inflammation and cancer, green onions also aid in weight loss, obesity reduction, and bone strengthening due to their vitamin K content.",
       packingOptions: [
@@ -27,6 +28,7 @@ const products = [
     {
       productName: "Hot Pepper",
       image: "hot-pepper.png",
+      lazyImage: "hot-pepper-lazy.png",
       description:
         "It is a product that no cook can do without in their kitchen because it gives a scent and flavor even if used sparingly. The benefits of hot pepper include reducing the risk of certain cancers such as stomach, mouth, and colon cancer. It is also very beneficial for men to increase fertility as it increases blood circulation in the body and gives a feeling of warmth. We excel in cultivating all its varieties such as F1 and Habanero.",
       packingOptions: [
@@ -49,6 +51,7 @@ const products = [
     {
       productName: "Pepper Colors",
       image: "pepper-colors.png",
+      lazyImage: "pepper-colors-lazy.png",
       description:
         "Rich in antioxidants and vitamins, it contains vitamin A, B, and C, making it a strong immune booster, helping to resist colds and coronaviruses. It also aids in weight loss, obesity reduction, and heart enhancement due to its content of folic acid.",
       packingOptions: [
@@ -77,6 +80,7 @@ const products = [
     {
       productName: "Onion",
       image: "onion.png",
+      lazyImage: "onion-lazy.png",
       description:
         "Onion is a crop that is found in every household around the world. It contains many important elements for the body, such as sodium, calcium, phosphorus, potassium, and others. In addition to being an indispensable element in most foods, giving them a delicious taste, its benefits to the body are countless. Onions help maintain heart health, strengthen the immune system, reduce bone fragility, provide the body with energy, protect against cancerous tumors, purify the body from toxins, contribute to reducing the appearance of wrinkles, and more.",
       packingOptions: [
@@ -105,6 +109,7 @@ const products = [
     {
       productName: "Cherry Tomato",
       image: "cherry-tomato.png",
+      lazyImage: "cherry-tomato-lazy.png",
       description:
         "A wonderful source of vitamins A, C, and E, as well as vitamin B and folic acid. It also contains abundant reserves of minerals such as calcium, manganese, phosphorus, and potassium. It has numerous benefits including regulating blood pressure, reducing cholesterol levels, preventing heart diseases, osteoporosis, and treating joint inflammation.",
       packingOptions: [
@@ -138,6 +143,7 @@ const products = [
     {
       productName: "Limes",
       image: "limes.png",
+      lazyImage: "limes-lazy.png",
       description:
         "Lime has a distinctive sour taste, making it a common ingredient in various dishes, especially salads. In addition to its delicious sour taste, lemon can provide the body with many health benefits as it is rich in vitamin C, fiber, and other nutrients and natural compounds beneficial to the body.",
       packingOptions: [
@@ -167,6 +173,7 @@ const products = [
     {
       productName: "Indian Okra",
       image: "indian-okra.png",
+      lazyImage: "indian-okra-lazy.png",
       description:
         "Okra is a heart and digestive-friendly vegetable, rich in antioxidants and dietary fiber that help regulate digestion, absorb nutrients, and lower harmful cholesterol levels in the body. It also contains vitamin C and other antioxidants that boost the immune system and enhance immune cell function, helping the body resist infections and diseases. Okra also protects the eyes from oxidative damage, such as age-related vision deterioration and cataracts.",
       packingOptions: [
@@ -186,16 +193,18 @@ const products = [
     {
       productName: "Garlic",
       image: "garlic.png",
-      description: "empty",
-      packingOptions: [["empty"]],
-      harvestMonths: ["empty"],
-      shippingOptions: ["empty"],
+      lazyImage: "garlic-lazy.png",
+      description: "upcoming",
+      packingOptions: [["upcoming"]],
+      harvestMonths: ["upcoming"],
+      shippingOptions: ["upcoming"],
     },
   ],
   [
     {
       productName: "Strawberry",
       image: "strawberry.png",
+      lazyImage: "strawberry-lazy.png",
       description:
         "Strawberry is the fruit of love that everyone adores, especially women and children, and it is the trader of happiness that increases the production of serotonin (one of the happiness hormones) in the body. It strengthens the immune system, protects against the risk of heart attacks, regulates blood pressure. As for the beauty benefits of strawberries, which make them very attractive to women, they include skin lightening and maintaining its radiance, preventing hair loss, strengthening nails and whitening teeth. Strawberries require special care from the planting process to harvesting and Our Strawberry licensed by EMCO CAL Company We are proud to offer fresh and frozen strawberries to the global markets, packaged using modern methods, and at competitive prices.",
       packingOptions: [
@@ -211,6 +220,7 @@ const products = [
     {
       productName: "Guava",
       image: "guava.png",
+      lazyImage: "guava-lazy.png",
       description:
         "Known as the fruit of paradise, or the fruit of health and beauty, this is what some call the guava fruit; due to its smart aroma, wonderful taste, and amazing health benefits. Guava contains important nutrients for the body such as: Vitamin A, B, C, antioxidants, potassium, and other elements. Among the benefits of guava that many may not know: fighting cancerous tumors, preventing diabetes, improving the immune system, preventing heart diseases suitability for diabetic patients, in addition to its wonderful benefits for women's beauty, and the health of pregnant women and fetuses.",
       packingOptions: [
@@ -242,6 +252,7 @@ const products = [
     {
       productName: "Sweet Potatoes",
       image: "sweet-potatoes.png",
+      lazyImage: "sweet-potatoes-lazy.png",
       description:
         "A rich source of vitamins and minerals, sweet potatoes contain vitamin A, B, C, and D, as well as iron, magnesium, and potassium. They are also a safe and natural source of sugar, beneficial for the body, hair, and skin. Sweet potatoes help regulate digestion, promote relaxation, and reduce feelings of stress.",
       packingOptions: [
@@ -262,6 +273,7 @@ const products = [
     {
       productName: "Mango",
       image: "mango.png",
+      lazyImage: "mango-lazy.png",
       description:
         'Contains numerous vitamins A, B, C, and E, along with antioxidants that boost and protect the body from various cancers. It is a rich source of potassium and a safe, natural source of sugar. Beneficial for the body, hair, and skin, it helps regulate digestion and elevate mood, earning it the name "fruit of love and happiness."',
       packingOptions: [
@@ -280,6 +292,7 @@ const products = [
     {
       productName: "Custard Apples",
       image: "custard-apples.png",
+      lazyImage: "custard-apples-lazy.png",
       description:
         "Custard Apple, also known as Atemoya, is a fruit rich in fiber, vitamins, and minerals. Custard apple supports the immune system, promotes heart and eye health, and helps reduce inflammation. It also contains a high level of antioxidants that combat many chronic diseases such as cancer.",
       packingOptions: [
@@ -292,6 +305,7 @@ const products = [
     {
       productName: "Dragon Fruit",
       image: "dragon-fruit.png",
+      lazyImage: "dragon-fruit-lazy.png",
       description:
         "Dragon fruit is a low-calorie fruit, rich in vitamins, fiber, and various minerals. It promotes digestive health, protects against heart diseases, and reduces the risk of various types of cancer.",
       packingOptions: [
@@ -303,6 +317,7 @@ const products = [
     {
       productName: "Barhi Dates",
       image: "barhi-dates.png",
+      lazyImage: "barhi-dates-lazy.png",
       description:
         "A good source of energy for the body and contains dietary fiber that helps improve the digestive system and maintain healthy skin and hair It is also a healthy alternative to processed sweets",
       packingOptions: [
@@ -314,6 +329,7 @@ const products = [
     {
       productName: "Frozen Strawberry",
       image: "frozen-strawberry.png",
+      lazyImage: "frozen-strawberry-lazy.png",
       description:
         "Strawberry is the fruit of love that everyone adores, especially women and children, and it is the trader of happiness that increases the production of serotonin (one of the happiness hormones) in the body. It strengthens the immune system, protects against the risk of heart attacks, regulates blood pressure. As for the beauty benefits of strawberries, which make them very attractive to women, they include skin lightening and maintaining its radiance, preventing hair loss, strengthening nails and whitening teeth. Strawberries require special care from the planting process to harvesting and Our Strawberry licensed by EMCO CAL Company We are proud to offer fresh and frozen strawberries to the global markets, packaged using modern methods, and at competitive prices.",
       packingOptions: [
@@ -338,6 +354,7 @@ const products = [
 /////////////////////////////////////////////////////////////////
 
 // on load
+
 const productsContainers = document.querySelectorAll(".products .cards");
 // when loading the page
 const onLoad = function () {
@@ -351,10 +368,11 @@ const onLoad = function () {
                   product.productName
                 }" data-product-category="${j === 1 ? "fruit" : "vegetable"}">
                   <img
-                    loading="lazy"
-                    src="images/${product.image}"
-                    class="card__image"
+                    src="images/${product.lazyImage}"
+                    data-src="images/${product.image}"
+                    class="card__image lazy-img"
                     alt="${product.productName}"
+                    style="width: 100%; height: auto;";
                   />
                   <div class="card__overlay">
                     <div class="card__header">
@@ -374,6 +392,25 @@ const onLoad = function () {
     });
     j--;
   }
+
+  const imgs = document.querySelectorAll(".products .card__image");
+  // lazy loading
+
+  const loadImg = function (entries, observer) {
+    const [entry] = entries;
+    console.log(entry);
+    if (!entry.isIntersecting) return;
+    entry.target.src = entry.target.dataset.src;
+    entry.target.addEventListener("load", function () {
+      entry.target.classList.remove("lazy-img");
+    });
+    observer.unobserve(entry.target);
+  };
+  const imgObserver = new IntersectionObserver(loadImg, {
+    root: null,
+    threshold: [0, 0.1, 0.5, 1],
+  });
+  imgs.forEach((img) => imgObserver.observe(img));
 };
 
 onLoad();
@@ -393,6 +430,7 @@ const FAQContactBtn = document.querySelector("main .faq-contact a");
 const yearElement = document.getElementById("year");
 const currentYear = new Date().getFullYear();
 const cards = document.querySelectorAll(".card");
+const sections = document.querySelectorAll("main section");
 let isModalOpen = false; // Flag to track if modal is open
 
 // for displaying current year in footer
@@ -425,7 +463,25 @@ const scroll = function (e) {
   }
 };
 
-// for expanding and collapsing sections using accordion
+// reveal sections
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("section-hidden");
+  observer.unobserve(entry.target);
+};
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null, // viewport
+  threshold: 0,
+  // rootMargin: "1000px",
+});
+sections.forEach((section) => {
+  sectionObserver.observe(section);
+  section.classList.add("section-hidden");
+});
+
+// for expanding and collapsing questions using accordion
 function toggleAccordion() {
   const itemToggle = this.getAttribute("aria-expanded");
 
