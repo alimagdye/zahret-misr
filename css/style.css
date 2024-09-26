@@ -43,6 +43,26 @@ header {
   display: none;
 }
 
+.section-hidden {
+  transform: translateY(8rem);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.lazy-img {
+  filter: blur(20px);
+}
+
+main section.about-start,
+main section.products {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+section {
+  transition: all 1s;
+}
+
 header .logo img {
   position: fixed;
   left: 2rem;
