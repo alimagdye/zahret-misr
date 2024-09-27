@@ -398,7 +398,6 @@ const onLoad = function () {
 
   const loadImg = function (entries, observer) {
     const [entry] = entries;
-    console.log(entry);
     if (!entry.isIntersecting) return;
     entry.target.src = entry.target.dataset.src;
     entry.target.addEventListener("load", function () {
@@ -473,7 +472,7 @@ const revealSection = function (entries, observer) {
 };
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null, // viewport
-  threshold: 0,
+  threshold: [0, 0.1, 0.5, 1],
   // rootMargin: "1000px",
 });
 sections.forEach((section) => {
