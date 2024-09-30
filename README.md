@@ -48,19 +48,16 @@ Welcome to the Zahret Misr website, a single-page application designed to showca
   - Client-side validation and error handling to ensure all required fields are filled out correctly.
   - Integration with the Web3Forms API for handling submissions, displaying user feedback through modals for both success and error responses.
 
-### 7. Dynamic Year Display
-- Automatically updates the footer with the current year for a professional touch, enhancing the relevance of the website.
-
-### 8. Accessible Navigation
+### 7. Accessible Navigation
 - Uses semantic HTML and ARIA attributes to ensure the website is accessible to all users, adhering to web accessibility standards.
 
-### 9. JavaScript Event Delegation
+### 8. JavaScript Event Delegation
 - Employed event delegation for handling events on dynamically generated product cards, optimizing performance by minimizing the number of event listeners.
 
-### 10. Error Handling
+### 9. Error Handling
 - Implemented robust error handling throughout the application, providing clear and informative messages for both success and error scenarios.
 
-### 11. Deployment
+### 10. Deployment
 - **GitHub Pages Deployment**: Since the original website wasn't published on their domain yet, I created a demo version using GitHub Pages, allowing users to explore the website's features without any setup requirements.
 
 
