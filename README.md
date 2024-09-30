@@ -92,5 +92,8 @@ Once the project is set up, open `index.html` in your browser to explore the pro
 
 ## Contact
 
-For any inquiries or feedback, please contact:
-- Email: info@zahretmisr.com
+Created by Ali Magdy. Feel free to contact me at alimagdye1@gmail.com for any questions or suggestions.
+
+---
+
+Thank you for checking out "Zahret Misr."
