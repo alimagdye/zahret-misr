@@ -104,6 +104,9 @@ Welcome to the Zahret Misr website, a single-page application designed to showca
 - **Feature**: Implemented robust error handling throughout the application, including form submissions and network requests. Users receive clear and informative messages for both success and error scenarios, enhancing user experience.
 
 These technical implementations showcase the skills and thoughtful design considerations applied to the Zahret Misr website, making it a professional and user-friendly platform for showcasing agricultural products.
+
+### 11. Deployment
+- **GitHub Pages Deployment**: Since the original website wasn't published on their domain yet, I created a demo version using GitHub Pages, allowing users to explore the website's features without any setup requirements.
   
 
 ## Technologies Used
