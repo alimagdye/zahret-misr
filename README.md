@@ -84,7 +84,7 @@ To set up this project locally, follow these steps:
 
 ## Usage
 
-Once the project is set up, open `index.html` in your browser to explore the products and learn more about Zahret Misr. You can also visit the live website at https://alimagdye.github.io/zahret-misr/.
+Once the project is set up, open `index.html` in your browser to explore the products and learn more about Zahret Misr. You can also visit the live website at https://alimagdye.github.io/zahret-misr
 
 ## Contact
 
