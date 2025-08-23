@@ -599,8 +599,8 @@ const work = function () {
     "afterbegin",
     ` Made with ❤️ by
         <a
-          href="https://github.com/alimagdye"
-          title="Ali Magdy Github"
+          href="https://alimagdy.vercel.app"
+          title="Ali Magdy Portfolio"
           target="_blank"
           >Ali Magdy</a
         >`
@@ -722,3 +722,4 @@ form.addEventListener("submit", function (e) {
       }, 3000);
     });
 });
+
