@@ -413,7 +413,7 @@ const onLoad = function () {
 };
 
 onLoad();
-console.log("developed by Ali Magdy");
+console.log("Developed by Ali Magdy");
 
 // elements, variables
 const phoneNav = document.querySelector(".phone-nav");
@@ -722,4 +722,5 @@ form.addEventListener("submit", function (e) {
       }, 3000);
     });
 });
+
 
